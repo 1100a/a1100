@@ -1,0 +1,13 @@
+name: a1100
+version: 0.1.1
+main: one.a1100.a1100.Main
+api-version: 1.18
+commands:
+  a1100a:
+    description: a1100a
+    aliases: [a1100, 1100, 1100a, asdf]
+    permission: a1100a.command
+permissions:
+  a1100a.command:
+    default: op
+    description: a1100 command Permission

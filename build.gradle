@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'one.a1100.a1100'
+version '0.1.1'
+
+configurations {
+    jar.archiveFileName = 'a1100.jar'
+    compileJava.options.encoding = 'UTF-8'
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    destinationDir new File(".debug/plugins/update")
+}
